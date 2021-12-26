@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <link rel="icon" type="image/png"  href="/images/ATILLA.png">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
+    <title>ATILLA</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+</head>
+    
+    <div class="center">
+        <div >
+            <label for="prennom">Prenom :</label>
+            <input type="text", name="prenom">
+            
+        </div>
+        <br>
+        <div>
+            <label for="nom">Nom :</label>
+            <input type="text", name="nom">
+            
+        </div>
+        <br>
+        <div>
+            <label for="genre">Genre :</label> <br>
+            <input type="radio" name="genre" value="masculin" >masculin <br>
+            <input type="radio" name="genre" value="féminin">féminin <br>
+            <label onclick="otherGenre()">
+            <input type="radio" name="genre" value="" id="other_genre">autre genre
+            <input type="text" name="other" id="other_text" value="autre">
+            </label> <br> <br>
+        </div>
+        <div>
+            <label for="date">Date de naissance :</label>
+            <input type="date" name="birthDate">
+        </div>
+        <br>
+        <div>
+            <label for="promo">Promo et spécialité :</label>
+            <select name="promo">
+                <option value="Pré-ING 1">Pré-ING 1</option>
+                <option value="Pré-ING 2">Pré-ING 2</option>
+                <option value="ING 1 GI">ING 1 GI</option>
+                <option value="ING 1 GM">ING 1 GM</option>
+                <option value="ING 2 GSI">ING 2 GSI</option>
+                <option value="ING 2 SIE">ING 2 SIE</option>
+                <option value="ING 2 MI">ING 2 MI</option>
+                <option value="ING 2 MF">ING 2 MF</option>
+                <option value="ING 3 GI">ING 3 GI</option>
+                <option value="ING 3 GM">ING 3 GM</option>
+                <option value="Ancien">Ancien</option>
+                <option value="Exté">Exté</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label for="campus">Campus :</label><br>
+            <input type="radio" name="campus" value="Cergy">Cergy <br>
+            <input type="radio" name="campus" value="Pau">Pau <br>
+            <input type="radio" name="campus" value="ST-Germain-En-Lay">ST-Germain-En-Lay <br>
+        </div>
+        <br>
+        <div>
+            <Label for="Mail">Adresse Mail de l'école :</Label>
+            <input type="mail" name="Mail">
+        </div>
+        <br>
+        <div>
+            <label for="maillist">Veux-tu rejoindre la mailing list pour être au courant des évènements ATILLA ?</label><br>
+            <input type="radio" name="maillist" value="oui"> Oui
+            <input type="radio" name="maillist" value="non"> Non
+        </div>
+        <br>
+        <div>
+            <label for="cotisation">Comptes-tu cotiser ?</label><br>
+            <input type="radio" name="cotisation" value="oui">Oui
+            <input type="radio" name="cotisation" value="non"> Non
+            <input type="radio" name="cotisation" value="ouiplustard"> Oui mais plus tard
+            <br><br>
+            <label> (D’un montant de 10€, la cotisation te permet d'être prioritaire sur les évènements, d’accéder à des tarifs préférentiels, au Wifi de l’association, d’avoir un droit de vote ainsi que de soutenir l’association dans ses projets)</label>
+        </div>
+        <br>
+        <div>
+            <label for="Q1">As-tu des connaissances en informatique ? Si oui préciser lesquelles.</label><br>
+            <textarea name="Q1" cols="90" rows="5"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="Q2">Qu'attends-tu de l’association ?</label><br>
+            <textarea name="Q2" cols="90" rows="5"></textarea>
+        </div>
+        <br>
+        <div>
+            <label for="Q3">Quels sont tes centres d’intérêts ?</label><br>
+            <textarea name="Q3" cols="90" rows="5"></textarea>
+        </div>
+        <br>
+        <div>
+            <input type="checkbox" name="conditions">
+            <label for="conditions">Je déclare avoir pris connaissance de la charte et du règlement intérieur de l’association, m’engage à les respecter et à les faire respecter pour l’année universitaire 2021/2022.</label>
+        </div>
+        <br>
+
+
+        
+        <input type="submit" value="valider">
+    </div>
+</body>
+</html>
