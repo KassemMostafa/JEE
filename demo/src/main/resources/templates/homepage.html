@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <link rel="icon" type="image/png"  href="/images/ATILLA.png">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
+    <title>ATILLA</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+</head>
+<body>
+    <p>welcome to ATILLA Project Home Page! </p>
+    <div sec:authorize="hasRole('ROLE_ADMIN')">
+        <div onclick="location.href='/admin/dashboard'">Acceder au DashBoard</div>
+    </div>
+    
+    <div>Qui sommes nous?</div>
+    <div>Ciliciam vero, quae Cydno amni exultat, Tarsus nobilitat, urbs perspicabilis hanc condidisse Perseus 
+        memoratur, Iovis filius et Danaes, vel certe ex Aethiopia profectus Sandan quidam nomine vir opulentus
+         et nobilis et Anazarbus auctoris vocabulum referens, et Mopsuestia vatis illius domicilium Mopsi, quem 
+         a conmilitio Argonautarum cum aureo vellere direpto redirent, errore abstractum delatumque ad Africae 
+         litus mors repentina consumpsit, et ex eo cespite punico tecti manes eius heroici dolorum varietati medentur 
+         plerumque sospitales.<br/><br/>
+
+        Dum haec in oriente aguntur, Arelate hiemem agens Constantius post theatralis ludos atque circenses ambitioso 
+        editos apparatu diem sextum idus Octobres, qui imperii eius annum tricensimum terminabat, insolentiae pondera 
+        gravius librans, siquid dubium deferebatur aut falsum, pro liquido accipiens et conperto, inter alia excarnificatum 
+        Gerontium Magnentianae comitem partis exulari maerore multavit.<br/><br/>
+        
+        Quanta autem vis amicitiae sit, ex hoc intellegi maxime potest, quod ex infinita societate generis humani, 
+        quam conciliavit ipsa natura, ita contracta res est et adducta in angustum ut omnis caritas aut inter duos 
+        aut inter paucos iungeretur.</div>
+
+    <div>Comment devenir membre?</div>
+    <div>C'est très simple tu peux soit cliquer sur ce <a href='/form'>lien</a>, soit scaner le code bar !</div>
+    <img src="/images/HomePage/qrcode_localhost.png" />
+</body>
+</html>
