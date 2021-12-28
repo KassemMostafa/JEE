@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head> 
-    <link rel="icon" type="image/png"  href="/images/ATILLA.png">
+    <link rel="icon" type="image/png"  href="/images/logos/ATILLA.png">
     <link rel="stylesheet" href="/style.css">
     <script src="/script.js"></script>
     <title>ATILLA</title> 
@@ -9,5 +9,9 @@
     
 </head>
 <body>
+    <div th:replace = "miseEnForme/header :: header"></div>
+
     Welcome to Dashboard
+
+    <div th:replace="miseEnForme/footer :: footer"></div>
 </body>

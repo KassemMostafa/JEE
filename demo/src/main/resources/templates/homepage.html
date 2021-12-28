@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head> 
-    <link rel="icon" type="image/png"  href="/images/ATILLA.png">
+    <link rel="icon" type="image/png"  href="/images/logos/ATILLA.png">
     <link rel="stylesheet" href="/style.css">
     <script src="/script.js"></script>
     <title>ATILLA</title> 
@@ -9,6 +9,7 @@
     
 </head>
 <body>
+    <div th:replace = "miseEnForme/header :: header"></div>
     <p>welcome to ATILLA Project Home Page! </p>
     <div sec:authorize="hasRole('ROLE_ADMIN')">
         <div onclick="location.href='/admin/dashboard'">Acceder au DashBoard</div>
@@ -34,5 +35,6 @@
     <div>Comment devenir membre?</div>
     <div>C'est très simple tu peux soit cliquer sur ce <a href='/form'>lien</a>, soit scaner le code bar !</div>
     <img src="/images/HomePage/qrcode_localhost.png" />
+    <div th:replace="miseEnForme/footer :: footer"></div>
 </body>
 </html>
