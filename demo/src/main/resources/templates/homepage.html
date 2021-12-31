@@ -10,31 +10,30 @@
 </head>
 <body>
     <div th:replace = "miseEnForme/header :: header"></div>
-    <p>welcome to ATILLA Project Home Page! </p>
-    <div sec:authorize="hasRole('ROLE_ADMIN')">
-        <div onclick="location.href='/admin/dashboard'">Acceder au DashBoard</div>
-    </div>
-    
-    <div>Qui sommes nous?</div>
-    <div>Ciliciam vero, quae Cydno amni exultat, Tarsus nobilitat, urbs perspicabilis hanc condidisse Perseus 
-        memoratur, Iovis filius et Danaes, vel certe ex Aethiopia profectus Sandan quidam nomine vir opulentus
-         et nobilis et Anazarbus auctoris vocabulum referens, et Mopsuestia vatis illius domicilium Mopsi, quem 
-         a conmilitio Argonautarum cum aureo vellere direpto redirent, errore abstractum delatumque ad Africae 
-         litus mors repentina consumpsit, et ex eo cespite punico tecti manes eius heroici dolorum varietati medentur 
-         plerumque sospitales.<br/><br/>
-
-        Dum haec in oriente aguntur, Arelate hiemem agens Constantius post theatralis ludos atque circenses ambitioso 
-        editos apparatu diem sextum idus Octobres, qui imperii eius annum tricensimum terminabat, insolentiae pondera 
-        gravius librans, siquid dubium deferebatur aut falsum, pro liquido accipiens et conperto, inter alia excarnificatum 
-        Gerontium Magnentianae comitem partis exulari maerore multavit.<br/><br/>
+    <div class="homePageWelcome">welcome to ATILLA Project Home Page! </div>
+    <div class="content">
         
-        Quanta autem vis amicitiae sit, ex hoc intellegi maxime potest, quod ex infinita societate generis humani, 
-        quam conciliavit ipsa natura, ita contracta res est et adducta in angustum ut omnis caritas aut inter duos 
-        aut inter paucos iungeretur.</div>
+        <div class="title">Qui sommes nous?</div>
+        <div>Ciliciam vero, quae Cydno amni exultat, Tarsus nobilitat, urbs perspicabilis hanc condidisse Perseus 
+            memoratur, Iovis filius et Danaes, vel certe ex Aethiopia profectus Sandan quidam nomine vir opulentus
+            et nobilis et Anazarbus auctoris vocabulum referens, et Mopsuestia vatis illius domicilium Mopsi, quem 
+            a conmilitio Argonautarum cum aureo vellere direpto redirent, errore abstractum delatumque ad Africae 
+            litus mors repentina consumpsit, et ex eo cespite punico tecti manes eius heroici dolorum varietati medentur 
+            plerumque sospitales.<br/><br/>
 
-    <div>Comment devenir membre?</div>
-    <div>C'est très simple tu peux soit cliquer sur ce <a href='/form'>lien</a>, soit scaner le code bar !</div>
-    <img src="/images/HomePage/qrcode_localhost.png" />
+            Dum haec in oriente aguntur, Arelate hiemem agens Constantius post theatralis ludos atque circenses ambitioso 
+            editos apparatu diem sextum idus Octobres, qui imperii eius annum tricensimum terminabat, insolentiae pondera 
+            gravius librans, siquid dubium deferebatur aut falsum, pro liquido accipiens et conperto, inter alia excarnificatum 
+            Gerontium Magnentianae comitem partis exulari maerore multavit.<br/><br/>
+            
+            Quanta autem vis amicitiae sit, ex hoc intellegi maxime potest, quod ex infinita societate generis humani, 
+            quam conciliavit ipsa natura, ita contracta res est et adducta in angustum ut omnis caritas aut inter duos 
+            aut inter paucos iungeretur.</div>
+
+        <div class="title">Comment devenir membre?</div>
+        <div>C'est très simple tu peux soit cliquer sur ce <a href='/form'>lien</a>, soit scaner le code bar !</div>
+        <div><img class="homePageImage" src="/images/HomePage/qrcode_localhost.png" /></div>
+    </div>
     <div th:replace="miseEnForme/footer :: footer"></div>
 </body>
 </html>

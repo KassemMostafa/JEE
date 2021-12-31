@@ -1,6 +1,13 @@
-<div th:fragment="header">
-    <img width="100px" src="../images/logos/logoATILLA.png" onclick="location.href='/'"/>
-    <div>option 1</div>
-    <div>option 2</div>
-    <div>option 3</div>
+<div class="header" th:fragment="header">
+    <img class="headerLogo" src="../images/logos/logoATILLA.png" onclick="location.href='/'"/>
+    <div class="headerButtons">
+        <a class="headerButton" sec:authorize="hasRole('ROLE_ADMIN')" href='/admin/dashboard'>
+            DashBoard
+        </a> 
+        <a class="headerButton" href="/form">Inscription</a> 
+        <a class="headerButton">option 3</a>
+    </div>
+    <div class="headerCompte">
+        connexion
+    </div>
 </div>
