@@ -12,4 +12,4 @@ public class AtillaAdhesionApplication {
 		SpringApplication.run(AtillaAdhesionApplication.class, args);
 	}
 
-}
+}	
