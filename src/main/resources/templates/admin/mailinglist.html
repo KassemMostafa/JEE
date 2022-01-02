@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <link rel="icon" type="image/png"  href="/images/logos/ATILLA.png">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
+    <title>ATILLA</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+</head>
+<body>
+    <div th:replace = "miseEnForme/header :: header"></div>
+    <div class="content">
+        <div th:attr="onclick=|navigator.clipboard.writeText('${mailinglist}')|">cliquez ici pour copier la Mailinglist</div>
+        <p th:text ="${mailinglist}"></p>
+    </div>
+    <div th:replace="miseEnForme/footer :: footer"></div>
+</body>
