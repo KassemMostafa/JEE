@@ -24,6 +24,12 @@ public class AdherantServiceImpl implements AdherantService {
 	public List<Adherant> getAdherants() {
 		return adherantDAO.getAdherants();
 	}
+	
+	@Override
+	@Transactional
+	public List<Adherant> getCotisants() {
+		return adherantDAO.getCotisants();
+	}
 
 	@Override
 	@Transactional

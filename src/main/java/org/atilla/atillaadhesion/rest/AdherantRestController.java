@@ -30,6 +30,11 @@ public class AdherantRestController {
 		return adherantService.getAdherants();
 	}
 	
+	@GetMapping("/adherants/cotisants")
+	public List <Adherant> getCotisants() {
+		return adherantService.getCotisants();
+	}
+	
 	@GetMapping("/adherants/{id}")
 	public Adherant getAdherant(@PathVariable int id) {
 		Adherant adherant = adherantService.getAdherant(id);

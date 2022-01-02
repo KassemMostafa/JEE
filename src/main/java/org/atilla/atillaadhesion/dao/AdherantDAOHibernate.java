@@ -9,7 +9,6 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public class AdherantDAOHibernate implements AdherantDAO {
@@ -28,6 +27,14 @@ public class AdherantDAOHibernate implements AdherantDAO {
 		Query<Adherant> query = session.createQuery("from Adherant", Adherant.class);
 		List<Adherant> adherants = query.getResultList();
 		return adherants;
+	}
+	
+	@Override
+	public List<Adherant> getCotisants() {
+		Session session = entityManager.unwrap(Session.class);
+		Query<Adherant> query = session.createQuery("from Adherant where cotisant = 1", Adherant.class);
+		List<Adherant> cotisants = query.getResultList();
+		return cotisants;
 	}
 
 	@Override
