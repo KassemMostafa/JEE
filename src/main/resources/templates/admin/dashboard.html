@@ -10,8 +10,37 @@
 </head>
 <body>
     <div th:replace = "miseEnForme/header :: header"></div>
-    <div class="content">
-    Welcome to Dashboard
+    <div class="content" onclick="navigator.clipboard.writeText('test')">
+    Welcome to Dashboard<br/>
+    <table class="databaseDisplay">
+        <thead>
+            <tr>
+                <th> Nom </th>
+                <th> Prénom </th>
+                <th> Genre </th>
+                <th> Date de naissance </th>
+                <th> Promo </th>
+                <th> Campus </th>
+                <th> Email </th>
+                <th> Mailinglist </th>
+                <th> Cotisant </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="adherant : ${adherants}">
+                <td th:text="${adherant.nom}"></td>
+                <td th:text="${adherant.prenom}"></td>
+                <td th:text="${adherant.genre}"></td>
+                <td th:text="${adherant.dateDeNaissance}"></td>
+                <td th:text="${adherant.promo}"></td>
+                <td th:text="${adherant.campus}"></td>
+                <td th:text="${adherant.email}"></td>
+                <td th:text="${adherant.mailingListe}"></td>
+                <td th:text="${adherant.cotisant}"></td>
+                <td><a>editer</a><a>supprimer</a></td>
+            </tr>
+        </tbody>
+    </table>
     </div>
     <div th:replace="miseEnForme/footer :: footer"></div>
 </body>

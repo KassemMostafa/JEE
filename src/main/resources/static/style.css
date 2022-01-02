@@ -199,3 +199,10 @@ textarea{
     border: 4px solid #666666;
     background-color: #FDA725;
 }
+
+/*PAGES*/
+
+.databaseDisplay{
+    width: 100%;
+    border: 3px solid #FDA725;
+}
