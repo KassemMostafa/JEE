@@ -27,8 +27,6 @@ public class AdherantDAOHibernate implements AdherantDAO {
 		Session session = entityManager.unwrap(Session.class); //session hibernate
 		Query<Adherant> query = session.createQuery("from Adherant", Adherant.class);
 		List<Adherant> adherants = query.getResultList();
-		
-		
 		return adherants;
 	}
 

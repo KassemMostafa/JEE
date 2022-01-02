@@ -6,6 +6,7 @@ import org.atilla.atillaadhesion.entity.Adherant;
 import org.atilla.atillaadhesion.service.AdherantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +26,14 @@ public class AdherantRestController {
 		return adherantService.getAdherants();
 	}
 	
-	
+	@GetMapping("/adherants/{id}")
+	public Adherant getAdherant(@PathVariable int id) {
+		Adherant adherant = adherantService.getAdherant(id);
+		if (adherant == null) {
+			throw new RuntimeException("Adherant Not found avec id = " + id);
+		}
+		return adherant;
+	}
 	
 	
 	
