@@ -30,7 +30,19 @@ public class AdherantServiceImpl implements AdherantService {
 	public List<Adherant> getCotisants() {
 		return adherantDAO.getCotisants();
 	}
-
+	
+	@Override
+	@Transactional
+	public String getMailingList(){
+		return adherantDAO.getMailingList();
+	}
+	
+	@Override
+	@Transactional
+	public String getMailingListCotisants() {
+		return adherantDAO.getMailingListCotisants();
+	}
+	
 	@Override
 	@Transactional
 	public Adherant getAdherant(int id) {

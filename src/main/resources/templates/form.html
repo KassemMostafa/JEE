@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/style.css">
     <script src="/script.js"></script>
     <title>ATILLA</title> 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no; fr, charset=UTF-8">
     
 </head>
 <body>
@@ -14,34 +14,34 @@
         <div class="center justify">
             <div >
                 <br/>
-                <label for="prennom">Prenom :</label>
-                <input type="text" class="formTextbox", name="prenom">
+                <label for="prenom">Prenom :</label>
+                <input type="text" class="formTextbox" id="prenom" name="prenom">
                 
             </div>
             <br>
             <div>
                 <label for="nom">Nom :</label>
-                <input type="text" class="formTextbox", name="nom">
+                <input type="text" class="formTextbox" id="nom" name="nom">
                 
             </div>
             <br>
             <div>
                 <label for="genre">Genre :</label> <br>
-                <input type="radio" class="formRadio" name="genre" value="masculin" >masculin <br>
-                <input type="radio" class="formRadio" name="genre" value="féminin">féminin <br>
+                <input type="radio" class="formRadio" name="genre" value="masculin" >Masculin <br>
+                <input type="radio" class="formRadio" name="genre" value="féminin">Féminin <br>
                 <label onclick="otherGenre()">
-                <input type="radio" class="formRadio" name="genre" value="" id="other_genre">autre genre
-                <input type="text" class="formTextbox" name="other" id="other_text" value="autre">
+                <input type="radio" class="formRadio" name="genre" value="" id="other_genre">Autre
+                <input type="text" class="formTextbox" name="other" id="other_text" value="">
                 </label> <br> <br>
             </div>
             <div>
                 <label for="date">Date de naissance :</label>
-                <input type="date" class="formTextbox" name="birthDate">
+                <input type="date" id="date" class="formTextbox" name="birthDate">
             </div>
             <br>
             <div>
                 <label for="promo">Promo et spécialité :</label>
-                <select class="formTextbox" name="promo">
+                <select class="formTextbox" id="promo" name="promo">
                     <option value="Pré-ING 1">Pré-ING 1</option>
                     <option value="Pré-ING 2">Pré-ING 2</option>
                     <option value="ING 1 GI">ING 1 GI</option>
@@ -65,21 +65,20 @@
             </div>
             <br>
             <div>
-                <Label for="Mail">Adresse Mail de l'école :</Label>
-                <input type="mail" class="formTextbox" name="Mail">
+                <Label for="mail">Adresse Mail de l'école :</Label>
+                <input type="mail" id="mail" class="formTextbox" name="Mail">
             </div>
             <br>
             <div>
                 <label for="maillist">Veux-tu rejoindre la mailing list pour être au courant des évènements ATILLA ?</label><br>
-                <input type="radio" class="formRadio" name="maillist" value="oui"> Oui
-                <input type="radio" class="formRadio" name="maillist" value="non"> Non
+                <input type="radio" class="formRadio" name="maillist" value="1"> Oui
+                <input type="radio" class="formRadio" name="maillist" value="0"> Non
             </div>
             <br>
             <div>
                 <label for="cotisation">Comptes-tu cotiser ?</label><br>
-                <input type="radio" class="formRadio" name="cotisation" value="oui">Oui
-                <input type="radio" class="formRadio" name="cotisation" value="non"> Non
-                <input type="radio" class="formRadio" name="cotisation" value="ouiplustard"> Oui mais plus tard
+                <input type="radio" class="formRadio" name="cotisation" value="1">Oui
+                <input type="radio" class="formRadio" name="cotisation" value="0"> Non
                 <br><br>
                 <label> (D’un montant de 10€, la cotisation te permet d'être prioritaire sur les évènements, d’accéder à des tarifs préférentiels, au Wifi de l’association, d’avoir un droit de vote ainsi que de soutenir l’association dans ses projets)</label>
             </div>
