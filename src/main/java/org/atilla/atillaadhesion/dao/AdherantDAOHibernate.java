@@ -37,6 +37,34 @@ public class AdherantDAOHibernate implements AdherantDAO {
 		return cotisants;
 	}
 
+  @Override
+	public String getMailingList(){
+		Session session = entityManager.unwrap(Session.class); //session hibernate
+		Query<Adherant> query = session.createQuery("from Adherant where mailing_liste=1", Adherant.class);
+		List<Adherant> adherants = query.getResultList();
+		String MLstring = adherants.get(0).getEmail();
+		for (Adherant adherant : adherants) {
+			if (adherant!=adherants.get(0)){
+				MLstring = MLstring+','+adherant.getEmail();
+			}
+		}
+		return MLstring;
+	}
+  
+  @Override
+	public String getMailingListCotisants(){
+		Session session = entityManager.unwrap(Session.class); //session hibernate
+		Query<Adherant> query = session.createQuery("from Adherant where mailing_liste=1 and cotisant=1", Adherant.class);
+		List<Adherant> adherants = query.getResultList();
+		String MLstring = adherants.get(0).getEmail();
+		for (Adherant adherant : adherants) {
+			if (adherant!=adherants.get(0)){
+				MLstring = MLstring+','+adherant.getEmail();
+			}
+		}
+		return MLstring;
+	}
+
 	@Override
 	public Adherant getAdherant(int id) {
 		Session session = entityManager.unwrap(Session.class);
@@ -62,5 +90,4 @@ public class AdherantDAOHibernate implements AdherantDAO {
 		
 	}
 	
-
 }
