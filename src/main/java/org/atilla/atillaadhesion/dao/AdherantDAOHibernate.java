@@ -22,7 +22,6 @@ public class AdherantDAOHibernate implements AdherantDAO {
 	}
 
 	@Override
-	@Transactional //gère automatiquement les transactions : pas de commit à faire pour chaque requête
 	public List<Adherant> getAdherants() {
 		
 		Session session = entityManager.unwrap(Session.class); //session hibernate
@@ -32,5 +31,31 @@ public class AdherantDAOHibernate implements AdherantDAO {
 		
 		return adherants;
 	}
+
+	@Override
+	public Adherant getAdherant(int id) {
+		Session session = entityManager.unwrap(Session.class);
+		Adherant adherant = session.get(Adherant.class,id);
+		return adherant;
+	}
+
+	@Override
+	//if id = 0, it'll save else it will update
+	public void saveAdherant(Adherant adherant) {
+		Session session = entityManager.unwrap(Session.class);
+		session.saveOrUpdate(adherant);
+		
+	}
+
+	@Override
+	public void deleteAdherant(int id) {
+		
+		Session session = entityManager.unwrap(Session.class);
+		Query query = session.createQuery("delete from Adherant where id = :adherantId");
+		query.setParameter("adherantId", id);
+		query.executeUpdate();
+		
+	}
+	
 
 }

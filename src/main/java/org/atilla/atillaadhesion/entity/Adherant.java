@@ -28,7 +28,7 @@ public class Adherant {
 	@Column(name="genre")
 	private String genre;
 	
-	@Column(name="dateDeNaissance")
+	@Column(name="dateDeNaissance") //date_de_naissance
 	private LocalDate dateDeNaissance;
 	
 	@Column(name="promo")
@@ -40,7 +40,7 @@ public class Adherant {
 	@Column(name="email")
 	private String email;
 	
-	@Column(name="mailingListe")
+	@Column(name="mailingListe") //mailing_liste	
 	private Boolean mailingListe;
 	
 	@Column(name="cotisant")
