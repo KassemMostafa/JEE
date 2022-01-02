@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -40,6 +41,12 @@ public class AdherantRestController {
 	@PostMapping("/adherants")
 	public Adherant addAdherant(@RequestBody Adherant adherant) {
 		adherant.setId(0);
+		adherantService.saveAdherant(adherant);
+		return adherant;
+	}
+	
+	@PutMapping("/adherants")
+	public Adherant updateAdherant(@RequestBody Adherant adherant) {
 		adherantService.saveAdherant(adherant);
 		return adherant;
 	}
