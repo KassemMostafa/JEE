@@ -195,6 +195,7 @@ textarea{
     margin-right: 1rem;
 
 }
+
 .formRadio:checked{
     border: 4px solid #666666;
     background-color: #FDA725;
@@ -202,7 +203,62 @@ textarea{
 
 /*PAGES*/
 
-.databaseDisplay{
+/*.databaseDisplay{
     width: 100%;
     border: 3px solid #FDA725;
+}*/
+
+.tableau {
+    width:100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+.titretab {
+    text-align: center;
+    background-color: #666666;
+    color: #FDA725;
+    width:100%;
+  }
+
+.tableau th{
+    text-align: center;
+    background-color: #666666;
+    color: #FDA725;
+  }
+
+tr.odd{
+    background-color: #cccccc;
+  }
+
+tr.even{
+    background-color: #aaaaaa;
+  }
+
+.tableau td {  
+    text-align: center;
+  }
+
+  
+
+.btn-grad {background-color: #FDA725;}
+.btn-grad {
+     margin: 10px;
+     padding: 15px 45px;
+     text-align: center;
+     text-transform: uppercase;
+     transition: 0.5s;
+     background-size: 200% auto;
+     color: white;            
+     box-shadow: 0 0 20px #eee;
+     border-radius: 10px;
+     display: block;
+   }
+
+.centerbt{
+    padding-left: 40%;
 }
+   
+
+
+  

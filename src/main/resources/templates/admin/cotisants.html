@@ -11,10 +11,17 @@
 <body>
     <div th:replace = "miseEnForme/header :: header"></div>
     <div class="content">
-    Liste des cotisants<br/><br/>
-    <div th:attr="onclick=|navigator.clipboard.writeText('${mailinglist}')|">cliquez ici pour copier la Mailinglist</div>
-    <a href="/admin/adherants">acceder à la liste des adherants</a>
-    <table class="databaseDisplay">
+    <br/><br/>
+    <div class="centerbt">
+        <button class="btn-grad" th:attr="onclick=|biencopie('${mailinglist}')|">
+            Copier la mailing Liste 
+        </button>
+
+    </div>
+    <br><br><br>
+   
+    <div class="titretab">Liste des cotisants</div>
+    <table class="tableau">
         <thead>
             <tr>
                 <th> Nom </th>
@@ -25,10 +32,12 @@
                 <th> Campus </th>
                 <th> Email </th>
                 <th> Mailinglist </th>
+                <th> Editer </th>
+                <th> Supprimer </th>
             </tr>
         </thead>
         <tbody>
-            <tr th:each="cotisant : ${cotisants}">
+            <tr th:each="cotisant, iterStat : ${cotisants}" th:class="${iterStat.odd}? 'odd' : 'even'">
                 <td th:text="${cotisant.nom}"></td>
                 <td th:text="${cotisant.prenom}"></td>
                 <td th:text="${cotisant.genre}"></td>
@@ -36,11 +45,16 @@
                 <td th:text="${cotisant.promo}"></td>
                 <td th:text="${cotisant.campus}"></td>
                 <td th:text="${cotisant.email}"></td>
-                <td th:text="${cotisant.mailingListe}"></td>
-                <td><a>editer</a><a>supprimer</a></td>
+                <td th:if="${cotisant.mailingListe } == true">oui</td>
+                <td th:if="${cotisant.mailingListe } == false">non</td>
+                <td class="edit"><img src="/images/edit.png" height="40px" width="40px" alt=""></td>
+                <td class="suppr"><img src="/images/croix.png" height="40px" width="40px" alt=""></td>
             </tr>
         </tbody>
     </table>
     </div>
+    
+    </div>
+   
     <div th:replace="miseEnForme/footer :: footer"></div>
 </body>
