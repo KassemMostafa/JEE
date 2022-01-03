@@ -46,23 +46,22 @@ public class Adherant {
 	@Column(name="cotisant")
 	private int cotisant;
 
-	@Column(name="connaissancesInfo") //connaissance_info
-	private String connaissancesinfo;
+	@Column(name="ConnaissancesInfo") //mailing_liste	
+	private String ConnaissancesInfo;
 	
 	@Column(name="attentes")
 	private String attentes;
 
-	@Column(name="centreInterets") //centre_interets
-	private String centreinterets;
-	
+	@Column(name="CentresInteret")
+	private String CentresInteret;
+
 	//Constructeurs
-	
 	public Adherant() {
 		//obligatoire pour que hibernate fonctionne
 	}
 
 	public Adherant(String nom, String prenom, String genre, LocalDate dateDeNaissance, String promo, String campus,
-			String email, Boolean mailingListe, int cotisant, String connaissancesinfo, String attentes, String centreinterets) {
+			String email, Boolean mailingListe, int cotisant, String ConnaissancesInfo, String attentes, String CentresInteret) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.genre = genre;
@@ -72,9 +71,9 @@ public class Adherant {
 		this.email = email;
 		this.mailingListe = mailingListe;
 		this.cotisant = cotisant;
-		this.connaissancesinfo = connaissancesinfo;
+		this.ConnaissancesInfo = ConnaissancesInfo;
 		this.attentes = attentes;
-		this.centreinterets=centreinterets;
+		this.CentresInteret=CentresInteret;
 	}
 	
 	//Getters et Setters
@@ -160,12 +159,12 @@ public class Adherant {
 		this.cotisant = cotisant;
 	}
 
-	public String getConnaissancesinfo() {
-		return connaissancesinfo;
+	public String getConnaissancesInfo() {
+		return ConnaissancesInfo;
 	}
 
-	public void setConnaissancesinfo(String connaissancesinfo) {
-		this.connaissancesinfo = connaissancesinfo;
+	public void setConnaissancesInfo(String ConnaissancesInfo) {
+		this.ConnaissancesInfo = ConnaissancesInfo;
 	}
 	public String getAttentes() {
 		return attentes;
@@ -175,11 +174,11 @@ public class Adherant {
 		this.attentes = attentes;
 	}
 	
-	public void setCentresinteret(String centresinteret) {
-		this.centreinterets = centresinteret;
+	public void setCentresInteret(String CentresInteret) {
+		this.CentresInteret = CentresInteret;
 	}
-	public String getCentresinteret() {
-		return centreinterets;
+	public String getCentresInteret() {
+		return CentresInteret;
 	}
 
 	//toString for debugging
@@ -187,8 +186,8 @@ public class Adherant {
 	public String toString() {
 		return "Adherant [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", genre=" + genre + ", dateDeNaissance="
 				+ dateDeNaissance + ", promo=" + promo + ", campus=" + campus + ", email=" + email + ", mailingListe="
-				+ mailingListe + ", cotisant=" + cotisant + ", connaissances info=" + connaissancesinfo + ", attentes="
-				+ attentes + ", centres d'interet=" + centreinterets + "]";
+				+ mailingListe + ", cotisant=" + cotisant + ", connaissances info=" + ConnaissancesInfo + ", attentes="
+				+ attentes + ", centres d'interet=" + CentresInteret + "]";
 	}
 	
 
