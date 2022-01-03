@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS adhesion;
+CREATE DATABASE  IF NOT EXISTS adhesion CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 USE adhesion;
 
 DROP TABLE IF EXISTS Adherant;
@@ -12,14 +12,11 @@ CREATE TABLE Adherant (
   promo varchar(45) DEFAULT NULL,
   campus varchar(45) DEFAULT NULL,
   email varchar(45) DEFAULT NULL,
-  connaissances_info varchar(45) DEFAULT NULL,
-  attentes varchar(45) DEFAULT NULL,
-  centre_interets varchar(45) DEFAULT NULL,
   mailing_liste BOOL DEFAULT 0,
   cotisant tinyint DEFAULT 0,
-  connaissances_Info varchar(45) DEFAULT NULL,
+  connaissances_info varchar(45) DEFAULT NULL,
   attentes varchar(45) DEFAULT NULL,
-  centres_Interet varchar(45) DEFAULT NULL);
+  centres_interet varchar(45) DEFAULT NULL);
 
     INSERT INTO Adherant Values (1, 'John', 'Doe', 'M','1999-03-30', 'ING2','Cergy', 'John@cy-tech.fr', 1, 1,"","","");
     INSERT INTO Adherant Values (2, 'rené', 'provence', 'neutre','1999-03-30', 'ING2','Pau', 'rené@cy-tech.fr', 0, 0,"","","");
