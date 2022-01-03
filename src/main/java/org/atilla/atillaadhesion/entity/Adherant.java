@@ -46,14 +46,14 @@ public class Adherant {
 	@Column(name="cotisant")
 	private int cotisant;
 
-	@Column(name="ConnaissancesInfo") //mailing_liste	
-	private String ConnaissancesInfo;
+	@Column(name="connaissancesInfo") //connaisances_info
+	private String connaissancesInfo;
 	
-	@Column(name="attentes")
+	@Column(name="attentes") 
 	private String attentes;
-
-	@Column(name="CentresInteret")
-	private String CentresInteret;
+	
+	@Column(name="centresInteret")//centres_interet
+	private String centresInteret;
 
 	//Constructeurs
 	public Adherant() {
@@ -61,7 +61,7 @@ public class Adherant {
 	}
 
 	public Adherant(String nom, String prenom, String genre, LocalDate dateDeNaissance, String promo, String campus,
-			String email, Boolean mailingListe, int cotisant, String ConnaissancesInfo, String attentes, String CentresInteret) {
+			String email, Boolean mailingListe, int cotisant, String connaissancesInfo, String attentes, String centresInteret) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.genre = genre;
@@ -71,9 +71,9 @@ public class Adherant {
 		this.email = email;
 		this.mailingListe = mailingListe;
 		this.cotisant = cotisant;
-		this.ConnaissancesInfo = ConnaissancesInfo;
+		this.connaissancesInfo = connaissancesInfo;
 		this.attentes = attentes;
-		this.CentresInteret=CentresInteret;
+		this.centresInteret=centresInteret;
 	}
 	
 	//Getters et Setters
@@ -160,11 +160,11 @@ public class Adherant {
 	}
 
 	public String getConnaissancesInfo() {
-		return ConnaissancesInfo;
+		return connaissancesInfo;
 	}
 
-	public void setConnaissancesInfo(String ConnaissancesInfo) {
-		this.ConnaissancesInfo = ConnaissancesInfo;
+	public void setConnaissancesInfo(String connaissancesInfo) {
+		this.connaissancesInfo = connaissancesInfo;
 	}
 	public String getAttentes() {
 		return attentes;
@@ -174,11 +174,11 @@ public class Adherant {
 		this.attentes = attentes;
 	}
 	
-	public void setCentresInteret(String CentresInteret) {
-		this.CentresInteret = CentresInteret;
+	public void setCentresInteret(String centresInteret) {
+		this.centresInteret = centresInteret;
 	}
 	public String getCentresInteret() {
-		return CentresInteret;
+		return centresInteret;
 	}
 
 	//toString for debugging
@@ -186,8 +186,8 @@ public class Adherant {
 	public String toString() {
 		return "Adherant [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", genre=" + genre + ", dateDeNaissance="
 				+ dateDeNaissance + ", promo=" + promo + ", campus=" + campus + ", email=" + email + ", mailingListe="
-				+ mailingListe + ", cotisant=" + cotisant + ", connaissances info=" + ConnaissancesInfo + ", attentes="
-				+ attentes + ", centres d'interet=" + CentresInteret + "]";
+				+ mailingListe + ", cotisant=" + cotisant + ", connaissances info=" + connaissancesInfo + ", attentes="
+				+ attentes + ", centres d'interet=" + centresInteret + "]";
 	}
 	
 
