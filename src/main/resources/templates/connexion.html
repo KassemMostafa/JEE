@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <link rel="icon" type="image/png"  href="/images/logos/ATILLA.png">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
+    <title>ATILLA</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no; fr, charset=UTF-8">
+    
+</head>
+<body>
+    <div th:replace = "miseEnForme/header :: header"></div>
+   		<h3>Login Page custom</h3>
+   			<div th:if="${param.error}">
+   			<span style="color: red;">Pseudo et mdp incorrect</span>
+   			</div>
+   			<div th:if="${param.logout}">
+   			<span>Vous venez de vous déconnecter</span>
+   			</div>
+   			
+   			<form th:action="@{/authentification}" method="POST">
+   				<p> Username: <input type="text" name="username"/> </p>
+   				<p> Password: <input type="password" name="password"/> </p>
+   				<input type="submit" value="Login"/>
+   			</form>
+    <div th:replace="miseEnForme/footer :: footer"></div>
+</body>
+</html>
