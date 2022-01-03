@@ -46,13 +46,13 @@ public class Adherant {
 	@Column(name="cotisant")
 	private int cotisant;
 
-	@Column(name="connaissancesinfo") //mailing_liste	
+	@Column(name="connaissancesInfo") //connaissance_info
 	private String connaissancesinfo;
 	
 	@Column(name="attentes")
 	private String attentes;
 
-	@Column(name="centreinterets")
+	@Column(name="centreInterets") //centre_interets
 	private String centreinterets;
 	
 	//Constructeurs
