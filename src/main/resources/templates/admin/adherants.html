@@ -55,9 +55,8 @@
                 <td th:if="${adherant.cotisant == 0}" >Non cotisant</td>
                 <td th:if="${adherant.cotisant == 1}" >Cotisant</td>
                 <td th:if="${adherant.cotisant == 2}" >En cours</td>
-                
                 <td class="edit"><img src="/images/edit.png" height="40px" width="40px" alt=""></td>
-                <td class="suppr"><img src="/images/croix.png" height="40px" width="40px" alt=""></td>
+                <td class="suppr"><img src="/images/croix.png" height="40px" width="40px" alt="" th:attr="onclick=|location.href(deleteA/${adherant.id})|"></td>
             </tr>
         </tbody>
     </table>

@@ -24,3 +24,4 @@ CREATE TABLE adherant (
     INSERT INTO adherant Values (4, 'John', 'Deux', 'F','1999-03-30', 'ING2','Cergy', 'John2@cy-tech.fr', 1, 0,"","","");
     INSERT INTO adherant Values (5, 'John', 'trois', 'M','1999-03-30', 'ING3','Cergy', 'Johny3@cy-tech.fr', 1, 0,"","","");
     INSERT INTO adherant Values (6, 'DAVID', 'Doa', 'David','1999-03-30', 'ING3','Cergy', 'David@cy-tech.fr', 1, 1,"","","");
+  	INSERT INTO adherant Values (7, 'Jeveu', 'Payer', 'argent','2000-12-30', 'ING3','Cergy', 'argentd@cy-tech.fr', 1, 2,"","","");

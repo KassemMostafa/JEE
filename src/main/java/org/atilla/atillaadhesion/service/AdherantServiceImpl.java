@@ -61,4 +61,22 @@ public class AdherantServiceImpl implements AdherantService {
 		adherantDAO.deleteAdherant(id);
 	}
 
+	@Override
+	public List<Adherant> getCotisantsNonValides() {
+		return adherantDAO.getCotisantsNonValides();
+	}
+
+	@Override
+	public void validateCotisant(int id) {
+		adherantDAO.validateCotisant(id);
+		
+	}
+
+	@Override
+	public void unvalidateCotisant(int id) {
+		adherantDAO.validateCotisant(id);
+		
+	}
+
+
 }

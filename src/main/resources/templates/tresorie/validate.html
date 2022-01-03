@@ -35,8 +35,8 @@
                 <td th:text="${adherant.promo}"></td>
                 <td th:text="${adherant.campus}"></td>
                 <td th:text="${adherant.email}"></td>
-                <td class="edit"><img src="/images/coche.png" height="40px" width="40px" alt=""></td>
-                <td class="suppr"><img src="/images/croix.png" height="40px" width="40px" alt=""></td>
+                <td class="edit"><img src="/images/coche.png" height="40px" width="40px" alt="" th:attr="href=|unvalidate/${adherant.id}|"></td>
+                <td class="suppr"><img src="/images/croix.png" height="40px" width="40px" alt="" th:attr="href=|validate/${adherant.id}|"></td>
             </tr>
         </tbody>
     </table>
