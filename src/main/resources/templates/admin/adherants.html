@@ -11,11 +11,22 @@
 <body>
     <div th:replace = "miseEnForme/header :: header"></div>
     <div class="content">
-    Liste des adherants<br/><br/>
-    <div th:attr="onclick=|navigator.clipboard.writeText('${mailinglist}')|">cliquez ici pour copier la Mailinglist</div>
-    <a href="/admin/cotisants">acceder à la liste des cotisants</a>
-    <table class="databaseDisplay">
+    <br/><br/><br>
+    <div class="centerbt">
+    <button class="btn-grad" th:attr="onclick=|biencopie('${mailinglist}')|">
+        Copier la mailing Liste 
+    </button>
+    </div>
+    
+   
+    
+    <br><br><br>
+    <div>
+        <p class="titretab">Liste des cotisants</p>
+    </div>
+    <table class="tableau">
         <thead>
+            
             <tr>
                 <th> Nom </th>
                 <th> Prénom </th>
@@ -26,10 +37,12 @@
                 <th> Email </th>
                 <th> Mailinglist </th>
                 <th> Cotisant </th>
+                <th> Editer </th>
+                <th> Supprimer </th>
             </tr>
         </thead>
         <tbody>
-            <tr th:each="adherant : ${adherants}">
+            <tr th:each="adherant,iterStat : ${adherants}" th:class="${iterStat.odd}? 'odd' : 'even'">
                 <td th:text="${adherant.nom}"></td>
                 <td th:text="${adherant.prenom}"></td>
                 <td th:text="${adherant.genre}"></td>
@@ -37,9 +50,13 @@
                 <td th:text="${adherant.promo}"></td>
                 <td th:text="${adherant.campus}"></td>
                 <td th:text="${adherant.email}"></td>
-                <td th:text="${adherant.mailingListe}"></td>
-                <td th:text="${adherant.cotisant}"></td>
-                <td><a>editer</a><a th:attr="href=|deleteA/${adherant.id}|">supprimer</a></td>
+                <td th:if="${adherant.mailingListe } == true">oui</td>
+                <td th:if="${adherant.mailingListe } == false">non</td>
+                <td th:if="${adherant.cotisant == 0}" >Non cotisant</td>
+                <td th:if="${adherant.cotisant == 1}" >Cotisant</td>
+                <td th:if="${adherant.cotisant == 2}" >En cours</td>
+                <td class="edit"><img src="/images/edit.png" height="40px" width="40px" alt=""></td>
+                <td class="suppr"><img src="/images/croix.png" height="40px" width="40px" alt="" th:attr="onclick=|location.href(deleteA/${adherant.id})|"></td>
             </tr>
         </tbody>
     </table>
