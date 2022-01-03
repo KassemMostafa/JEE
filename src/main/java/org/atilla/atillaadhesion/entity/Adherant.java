@@ -54,9 +54,8 @@ public class Adherant {
 
 	@Column(name="CentresInteret")
 	private String CentresInteret;
-	
+
 	//Constructeurs
-	
 	public Adherant() {
 		//obligatoire pour que hibernate fonctionne
 	}
