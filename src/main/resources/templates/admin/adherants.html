@@ -10,8 +10,10 @@
 </head>
 <body>
     <div th:replace = "miseEnForme/header :: header"></div>
-    <div class="content" onclick="navigator.clipboard.writeText('test')">
-    Welcome to Dashboard<br/>
+    <div class="content">
+    Liste des adherants<br/><br/>
+    <div th:attr="onclick=|navigator.clipboard.writeText('${mailinglist}')|">cliquez ici pour copier la Mailinglist</div>
+    <a href="/admin/cotisants">acceder à la liste des cotisants</a>
     <table class="databaseDisplay">
         <thead>
             <tr>

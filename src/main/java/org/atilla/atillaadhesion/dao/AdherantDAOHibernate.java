@@ -66,6 +66,14 @@ public class AdherantDAOHibernate implements AdherantDAO {
 	}
 
 	@Override
+	public List<Adherant> getCotisantsNonValides() {
+		Session session = entityManager.unwrap(Session.class);
+		Query<Adherant> query = session.createQuery("from Adherant where cotisant = 2", Adherant.class);
+		List<Adherant> cotisants = query.getResultList();
+		return cotisants;
+	}
+
+	@Override
 	public Adherant getAdherant(int id) {
 		Session session = entityManager.unwrap(Session.class);
 		Adherant adherant = session.get(Adherant.class,id);

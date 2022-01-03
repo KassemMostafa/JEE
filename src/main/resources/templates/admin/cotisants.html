@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <link rel="icon" type="image/png"  href="/images/logos/ATILLA.png">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
+    <title>ATILLA</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+</head>
+<body>
+    <div th:replace = "miseEnForme/header :: header"></div>
+    <div class="content">
+    Liste des cotisants<br/><br/>
+    <div th:attr="onclick=|navigator.clipboard.writeText('${mailinglist}')|">cliquez ici pour copier la Mailinglist</div>
+    <a href="/admin/adherants">acceder à la liste des adherants</a>
+    <table class="databaseDisplay">
+        <thead>
+            <tr>
+                <th> Nom </th>
+                <th> Prénom </th>
+                <th> Genre </th>
+                <th> Date de naissance </th>
+                <th> Promo </th>
+                <th> Campus </th>
+                <th> Email </th>
+                <th> Mailinglist </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="cotisant : ${cotisants}">
+                <td th:text="${cotisant.nom}"></td>
+                <td th:text="${cotisant.prenom}"></td>
+                <td th:text="${cotisant.genre}"></td>
+                <td th:text="${cotisant.dateDeNaissance}"></td>
+                <td th:text="${cotisant.promo}"></td>
+                <td th:text="${cotisant.campus}"></td>
+                <td th:text="${cotisant.email}"></td>
+                <td th:text="${cotisant.mailingListe}"></td>
+                <td><a>editer</a><a>supprimer</a></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div th:replace="miseEnForme/footer :: footer"></div>
+</body>

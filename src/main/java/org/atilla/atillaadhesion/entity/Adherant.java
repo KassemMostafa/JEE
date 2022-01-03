@@ -44,7 +44,16 @@ public class Adherant {
 	private Boolean mailingListe;
 	
 	@Column(name="cotisant")
-	private Boolean cotisant;
+	private int cotisant;
+
+	@Column(name="connaissancesinfo") //mailing_liste	
+	private String connaissancesinfo;
+	
+	@Column(name="attentes")
+	private String attentes;
+
+	@Column(name="centreinterets")
+	private String centreinterets;
 	
 	//Constructeurs
 	
@@ -53,7 +62,7 @@ public class Adherant {
 	}
 
 	public Adherant(String nom, String prenom, String genre, LocalDate dateDeNaissance, String promo, String campus,
-			String email, Boolean mailingListe, Boolean cotisant) {
+			String email, Boolean mailingListe, int cotisant, String connaissancesinfo, String attentes, String centreinterets) {
 		this.nom = nom;
 		this.prenom = prenom;
 		this.genre = genre;
@@ -63,6 +72,9 @@ public class Adherant {
 		this.email = email;
 		this.mailingListe = mailingListe;
 		this.cotisant = cotisant;
+		this.connaissancesinfo = connaissancesinfo;
+		this.attentes = attentes;
+		this.centreinterets=centreinterets;
 	}
 	
 	//Getters et Setters
@@ -140,12 +152,34 @@ public class Adherant {
 		this.mailingListe = mailingListe;
 	}
 
-	public Boolean getCotisant() {
+	public int getCotisant() {
 		return cotisant;
 	}
 
-	public void setCotisant(Boolean cotisant) {
+	public void setCotisant(int cotisant) {
 		this.cotisant = cotisant;
+	}
+
+	public String getConnaissancesinfo() {
+		return connaissancesinfo;
+	}
+
+	public void setConnaissancesinfo(String connaissancesinfo) {
+		this.connaissancesinfo = connaissancesinfo;
+	}
+	public String getAttentes() {
+		return attentes;
+	}
+
+	public void setAttentes(String attentes) {
+		this.attentes = attentes;
+	}
+	
+	public void setCentresinteret(String centresinteret) {
+		this.centreinterets = centresinteret;
+	}
+	public String getCentresinteret() {
+		return centreinterets;
 	}
 
 	//toString for debugging
@@ -153,7 +187,8 @@ public class Adherant {
 	public String toString() {
 		return "Adherant [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", genre=" + genre + ", dateDeNaissance="
 				+ dateDeNaissance + ", promo=" + promo + ", campus=" + campus + ", email=" + email + ", mailingListe="
-				+ mailingListe + ", cotisant=" + cotisant + "]";
+				+ mailingListe + ", cotisant=" + cotisant + ", connaissances info=" + connaissancesinfo + ", attentes="
+				+ attentes + ", centres d'interet=" + centreinterets + "]";
 	}
 	
 
