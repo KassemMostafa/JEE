@@ -29,7 +29,7 @@ public class Adherant {
 	private String genre;
 	
 	@Column(name="dateDeNaissance") //date_de_naissance
-	private LocalDate dateDeNaissance;
+	private String dateDeNaissance;
 	
 	@Column(name="promo")
 	private String promo;
@@ -60,7 +60,7 @@ public class Adherant {
 		//obligatoire pour que hibernate fonctionne
 	}
 
-	public Adherant(String nom, String prenom, String genre, LocalDate dateDeNaissance, String promo, String campus,
+	public Adherant(String nom, String prenom, String genre, String dateDeNaissance, String promo, String campus,
 			String email, Boolean mailingListe, int cotisant, String connaissancesInfo, String attentes, String centresInteret) {
 		this.nom = nom;
 		this.prenom = prenom;
@@ -111,11 +111,11 @@ public class Adherant {
 		this.genre = genre;
 	}
 
-	public LocalDate getDateDeNaissance() {
+	public String getDateDeNaissance() {
 		return dateDeNaissance;
 	}
 
-	public void setDateDeNaissance(LocalDate dateDeNaissance) {
+	public void setDateDeNaissance(String dateDeNaissance) {
 		this.dateDeNaissance = dateDeNaissance;
 	}
 

@@ -10,9 +10,10 @@
 </head>
 <body>
     <div th:replace = "miseEnForme/header :: header"></div>
+    <br><br><br><br><br>
    		<h3>Login Page custom</h3>
    			<div th:if="${param.error}">
-   			<span style="color: red;">Pseudo et mdp incorrect</span>
+   			<span style="color: red;">Pseudo et mot de passe incorrect</span>
    			</div>
    			<div th:if="${param.logout}">
    			<span>Vous venez de vous déconnecter</span>
