@@ -11,7 +11,8 @@
 <body>
     <div th:replace = "miseEnForme/header :: header"></div>
     <div class="content">
-    <table class="databaseDisplay">
+        <br><br><br>
+    <table class="tableau">
         <thead>
             <tr>
                 <th> Nom </th>
@@ -21,10 +22,12 @@
                 <th> Promo </th>
                 <th> Campus </th>
                 <th> Email </th>
+                <th> Valider </th>
+                <th> Refuser </th>
             </tr>
         </thead>
         <tbody>
-            <tr th:each="adherant : ${adherants}">
+            <tr th:each="adherant,iterStat : ${adherants}" th:class="${iterStat.odd}? 'odd' : 'even'">
                 <td th:text="${adherant.nom}"></td>
                 <td th:text="${adherant.prenom}"></td>
                 <td th:text="${adherant.genre}"></td>
@@ -32,7 +35,8 @@
                 <td th:text="${adherant.promo}"></td>
                 <td th:text="${adherant.campus}"></td>
                 <td th:text="${adherant.email}"></td>
-                <td><a>accepter</a><a>supprimer</a></td>
+                <td class="edit"><img src="/images/coche.png" height="40px" width="40px" alt=""></td>
+                <td class="suppr"><img src="/images/croix.png" height="40px" width="40px" alt=""></td>
             </tr>
         </tbody>
     </table>
