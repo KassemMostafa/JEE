@@ -3,13 +3,11 @@ package org.atilla.atillaadhesion.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-
 import org.atilla.atillaadhesion.entity.Adherant;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 @Repository
 public class AdherantDAOHibernate implements AdherantDAO {
 	
@@ -42,13 +40,18 @@ public class AdherantDAOHibernate implements AdherantDAO {
 		Session session = entityManager.unwrap(Session.class); //session hibernate
 		Query<Adherant> query = session.createQuery("from Adherant where mailing_liste=1", Adherant.class);
 		List<Adherant> adherants = query.getResultList();
-		String MLstring = adherants.get(0).getEmail();
-		for (Adherant adherant : adherants) {
-			if (adherant!=adherants.get(0)){
-				MLstring = MLstring+','+adherant.getEmail();
+		if (!adherants.isEmpty()) {
+			String MLstring = adherants.get(0).getEmail();
+			for (Adherant adherant : adherants) {
+				if (adherant!=adherants.get(0)){
+					MLstring = MLstring+','+adherant.getEmail();
+				}
 			}
+			return MLstring;
 		}
-		return MLstring;
+		else{
+			return"";
+		}
 	}
   
   @Override
@@ -56,13 +59,18 @@ public class AdherantDAOHibernate implements AdherantDAO {
 		Session session = entityManager.unwrap(Session.class); //session hibernate
 		Query<Adherant> query = session.createQuery("from Adherant where mailing_liste=1 and cotisant=1", Adherant.class);
 		List<Adherant> adherants = query.getResultList();
-		String MLstring = adherants.get(0).getEmail();
-		for (Adherant adherant : adherants) {
-			if (adherant!=adherants.get(0)){
-				MLstring = MLstring+','+adherant.getEmail();
+		if (!adherants.isEmpty()) {
+			String MLstring = adherants.get(0).getEmail();
+			for (Adherant adherant : adherants) {
+				if (adherant!=adherants.get(0)){
+					MLstring = MLstring+','+adherant.getEmail();
+				}
 			}
+			return MLstring;
 		}
-		return MLstring;
+		else{
+			return "";
+		}
 	}
 
 	@Override
@@ -97,5 +105,23 @@ public class AdherantDAOHibernate implements AdherantDAO {
 		query.executeUpdate();
 		
 	}
+
+	@Override
+	public void validateCotisant(int id) {
+		Session session = entityManager.unwrap(Session.class);
+		Query query = session.createQuery("update Adherant set cotisant = 1 where id = :adherantId");
+		query.setParameter("adherantId", id);
+		query.executeUpdate();
+		
+	}
 	
+	@Override
+	public void unvalidateCotisant(int id) {
+		Session session = entityManager.unwrap(Session.class);
+		Query query = session.createQuery("update Adherant set cotisant = 0 where id = :adherantId");
+		query.setParameter("adherantId", id);
+		query.executeUpdate();
+		
+	}
+
 }

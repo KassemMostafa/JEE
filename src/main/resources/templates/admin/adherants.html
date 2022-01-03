@@ -39,7 +39,7 @@
                 <td th:text="${adherant.email}"></td>
                 <td th:text="${adherant.mailingListe}"></td>
                 <td th:text="${adherant.cotisant}"></td>
-                <td><a>editer</a><a>supprimer</a></td>
+                <td><a>editer</a><a th:attr="href=|deleteA/${adherant.id}|">supprimer</a></td>
             </tr>
         </tbody>
     </table>

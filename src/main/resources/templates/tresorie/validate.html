@@ -32,7 +32,8 @@
                 <td th:text="${adherant.promo}"></td>
                 <td th:text="${adherant.campus}"></td>
                 <td th:text="${adherant.email}"></td>
-                <td><a>accepter</a><a>supprimer</a></td>
+                <!--<td><a>accepter</a><a>supprimer</a></td>-->
+                <td><a th:attr="href=|validate/${adherant.id}|">accepter</a><a th:attr="href=|unvalidate/${adherant.id}|">supprimer</a></td>
             </tr>
         </tbody>
     </table>

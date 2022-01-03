@@ -14,4 +14,6 @@ public interface AdherantDAO {
 	public List<Adherant> getCotisantsNonValides();
 	public void saveAdherant(Adherant adherant);
 	public void deleteAdherant(int id);
+	public void validateCotisant(int id);
+	public void unvalidateCotisant(int id);
 }
