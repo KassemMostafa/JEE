@@ -9,6 +9,6 @@ public class HomeController {
     public String HomePage(/*Model model*/) {
         //boolean isAdmin = true;
         //model.addAttribute("isAdmin",isAdmin);
-        return("homePage");
+        return("homepage");
     }
 }
