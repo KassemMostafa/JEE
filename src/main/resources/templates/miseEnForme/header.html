@@ -2,12 +2,17 @@
     <img class="headerLogo" src="../images/logos/logoATILLA.png" onclick="location.href='/'"/>
     <div class="headerButtons">
         <!--<a class="headerButton" sec:authorize="hasRole('ROLE_ADMIN')" href='/admin/adherants'>-->
-        <a class="headerButton"  href='/admin/adherants'> Adherants</a>
-        <a class="headerButton"  href='/admin/cotisants'>Cotisants</a> 
-        <a class="headerButton" href="/form">Inscription</a> 
-        <a class="headerButton" href="/tresorie/validate"> Valider cotisants </a>
+       <a class="headerButton" href="/form">Inscription</a> 
+       <a sec:authorize="isAuthenticated()" class="headerButton"  href='/admin/adherants'> Adherants</a>
+       <a sec:authorize="isAuthenticated()" class="headerButton"  href='/admin/cotisants'>Cotisants</a>
+       <a sec:authorize="hasRole('TRESORIER')" class="headerButton" href="/tresorie/validate"> Valider cotisants </a>
     </div>
-    <div class="headerCompte">
-        connexion
+    <div sec:authorize="isAnonymous()" class="headerCompte">
+        Connexion
+    </div>
+    <div >
+    	<form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="POST">
+    		<input class="headerCompte" type="submit" value="Logout"/>
+    	</form>
     </div>
 </div>

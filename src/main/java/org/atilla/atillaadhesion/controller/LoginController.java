@@ -12,4 +12,9 @@ public class LoginController {
 		return "connexion";
 	}
 	
+	@GetMapping("erreur-501")
+	public String ShowerreurAuthorization() {
+		return "erreur-501";
+	}
+	
 }
