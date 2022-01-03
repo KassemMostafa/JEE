@@ -10,32 +10,21 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/admin")
+@RequestMapping("/tresorie")
 @Controller
-public class AdminController {
+public class TresorieController {
 	
 	private AdherantService adherantService;
 	
 	@Autowired
-	public AdminController(AdherantService adherantService) {
+	public TresorieController(AdherantService adherantService) {
 		this.adherantService = adherantService;
 	}
 	
-	@GetMapping("/adherants")
+	@GetMapping("/validate")
     public String adherants(Model model){
-        model.addAttribute("adherants",adherantService.getAdherants());
-		String MLstring = adherantService.getMailingList();
-        model.addAttribute("mailinglist",MLstring);
-        return("admin/adherants");
-    }
-
-
-	@GetMapping("/cotisants")
-    public String cotisants(Model model){
-		model.addAttribute("cotisants",adherantService.getCotisants());
-		String MLstring = adherantService.getMailingListCotisants();
-        model.addAttribute("mailinglist",MLstring);
-        return("admin/cotisants");
+        model.addAttribute("adherants",adherantService.getCotisantsNonValides());
+        return("tresorie/validate");
     }
 
 }

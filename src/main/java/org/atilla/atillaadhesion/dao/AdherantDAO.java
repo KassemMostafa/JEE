@@ -11,6 +11,7 @@ public interface AdherantDAO {
 	public String getMailingListCotisants();
 	public List<Adherant> getCotisants();
 	public Adherant getAdherant(int id); 
+	public List<Adherant> getCotisantsNonValides();
 	public void saveAdherant(Adherant adherant);
 	public void deleteAdherant(int id);
 }

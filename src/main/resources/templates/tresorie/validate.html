@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <link rel="icon" type="image/png"  href="/images/logos/ATILLA.png">
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js"></script>
+    <title>ATILLA</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+</head>
+<body>
+    <div th:replace = "miseEnForme/header :: header"></div>
+    <div class="content">
+    <table class="databaseDisplay">
+        <thead>
+            <tr>
+                <th> Nom </th>
+                <th> Prénom </th>
+                <th> Genre </th>
+                <th> Date de naissance </th>
+                <th> Promo </th>
+                <th> Campus </th>
+                <th> Email </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="adherant : ${adherants}">
+                <td th:text="${adherant.nom}"></td>
+                <td th:text="${adherant.prenom}"></td>
+                <td th:text="${adherant.genre}"></td>
+                <td th:text="${adherant.dateDeNaissance}"></td>
+                <td th:text="${adherant.promo}"></td>
+                <td th:text="${adherant.campus}"></td>
+                <td th:text="${adherant.email}"></td>
+                <td><a>accepter</a><a>supprimer</a></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div th:replace="miseEnForme/footer :: footer"></div>
+</body>
