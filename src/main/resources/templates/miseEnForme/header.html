@@ -8,9 +8,9 @@
        <a sec:authorize="hasRole('TRESORIER')" class="headerButton" href="/tresorie/validate"> Valider cotisants </a>
     </div>
         <a sec:authorize="isAnonymous()" class="headerCompte"  href='/connexion'>Connexion</a>
-    <div >
-    	<form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="POST">
-    		<input class="headerCompte" type="submit" value="Logout"/>
-    	</form>
+        <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="POST">
+            <input class="headerCompte" type="submit" value="Logout"/>
+        </form>
     </div>
+    
 </div>
