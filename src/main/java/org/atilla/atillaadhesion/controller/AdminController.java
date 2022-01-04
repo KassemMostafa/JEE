@@ -5,8 +5,10 @@ import org.atilla.atillaadhesion.service.AdherantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -37,22 +39,32 @@ public class AdminController {
         model.addAttribute("mailinglist",MLstring);
         return("admin/cotisants");
     }
-	/*@DeleteMapping*/
+	
+//	@DeleteMapping("deleteA/{id}")
 	@RequestMapping(value = "deleteA/{id}", method = RequestMethod.GET)
-	public String deleteAderant(@PathVariable int id){
+	public String deleteAdherant(@PathVariable int id){
+		Adherant adherant = adherantService.getAdherant(id);
+		
+		if (adherant == null) {
+			throw new RuntimeException("Adherant not found avec id = " + id);
+		}
 		adherantService.deleteAdherant(id);
-		return("reroot/rerootDA");
-		/*return"Redirect(tresorie/valide)";*/
+		return"redirect:/admin/adherants";
 	}
-	/*@DeleteMapping*/
+	
+//	@DeleteMapping("deleteC/{id}")
 	@RequestMapping(value = "deleteC/{id}", method = RequestMethod.GET)
 	public String deleteCotisant(@PathVariable int id){
+		Adherant adherant = adherantService.getAdherant(id);
+		
+		if (adherant == null) {
+			throw new RuntimeException("Adherant not found avec id = " + id);
+		}
 		adherantService.deleteAdherant(id);
-		return("reroot/rerootDC");
-		/*return"Redirect(tresorie/valide)";*/
+		return"redirect:/admin/cotisants";
 	}
 
-	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+	@PutMapping("/edit/{id}")
 	public String showFormEdit(Model model,@PathVariable int id) {
 		Adherant adherant = adherantService.getAdherant(id);
 		model.addAttribute("adherant",adherant);
