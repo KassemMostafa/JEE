@@ -32,7 +32,6 @@ public class FormController {
 	public String saveAdherant(@ModelAttribute("adherant") Adherant adherant) {
 		adherantService.saveAdherant(adherant);
 		return "redirect:/";
-		
 	}
 
 }

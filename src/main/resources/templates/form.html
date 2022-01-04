@@ -28,12 +28,10 @@
             <br>
             <div>
                 <label for="genre">Genre :</label> <br>
-                <input  type="radio"  class="formRadio" th:field="*{genre}"  th:value="M" th:checked="checked">Masculin <br>
-                <input type="radio" class="formRadio" th:field="*{genre}" th:value="F">Féminin <br>
-                <label onclick="otherGenre()">
-                <input type="radio" class="formRadio"  name="genre" value="" id="other_genre">Autre
-                <input  type="text" class="formTextbox" th:field="*{genre}">
-                </label> <br> <br>
+                <input type="radio"  class="formRadio" th:field="*{genre}" th:value="M">Masculin <br>
+                <input type="radio" class="formRadio" th:field="*{genre}" th:value="F" >Féminin <br>
+                <input type="radio" class="formRadio"  th:field="*{genre}" th:value="Autre" >Autre
+                <br> <br>
             </div>
             <div>
                 <label for="date">Date de naissance :</label>
