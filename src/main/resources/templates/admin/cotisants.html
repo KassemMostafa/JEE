@@ -47,8 +47,8 @@
                 <td th:text="${cotisant.email}"></td>
                 <td th:if="${cotisant.mailingListe } == true">oui</td>
                 <td th:if="${cotisant.mailingListe } == false">non</td>
-                <td class="edit"><img src="/images/edit.png" height="40px" width="40px" alt=""></td>
-                <td class="suppr"><img src="/images/croix.png" height="40px" width="40px" alt=""></td>
+                <td class="edit"><img src="/images/edit.png" height="40px" width="40px" alt="" th:attr="onclick=|location.href='edit/${cotisant.id}'|"></td>
+                <td class="suppr"><img src="/images/croix.png" height="40px" width="40px" alt="" th:attr="onclick=|location.href='deleteC/${cotisant.id}'|"></td>
             </tr>
         </tbody>
     </table>

@@ -1,11 +1,14 @@
 package org.atilla.atillaadhesion.controller;
 
+import org.atilla.atillaadhesion.entity.Adherant;
 import org.atilla.atillaadhesion.service.AdherantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @RequestMapping("/admin")
 @Controller
@@ -34,6 +37,27 @@ public class AdminController {
         model.addAttribute("mailinglist",MLstring);
         return("admin/cotisants");
     }
+	/*@DeleteMapping*/
+	@RequestMapping(value = "deleteA/{id}", method = RequestMethod.GET)
+	public String deleteAderant(@PathVariable int id){
+		adherantService.deleteAdherant(id);
+		return("reroot/rerootDA");
+		/*return"Redirect(tresorie/valide)";*/
+	}
+	/*@DeleteMapping*/
+	@RequestMapping(value = "deleteC/{id}", method = RequestMethod.GET)
+	public String deleteCotisant(@PathVariable int id){
+		adherantService.deleteAdherant(id);
+		return("reroot/rerootDC");
+		/*return"Redirect(tresorie/valide)";*/
+	}
+
+	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+	public String showFormEdit(Model model,@PathVariable int id) {
+		Adherant adherant = adherantService.getAdherant(id);
+		model.addAttribute("adherant",adherant);
+		return "formEdit";
+	}
 	
 
 }

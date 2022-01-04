@@ -90,12 +90,13 @@ a:hover{
     
 .headerCompte{
     float: right;
+    background-color: #444444;
     border-radius: 5px 5px 5px 5px;
     padding: 5px;
     color:#FDA725;
     width: fit-content;
     margin-top: 9px;
-    margin-right: 10px;
+    margin-right: 2rem;
     cursor: pointer;
     @-moz-document url-prefix() {
         width: -moz-max-content;
@@ -227,6 +228,7 @@ textarea{
     color: #FDA725;
   }
 
+
 tr.odd{
     background-color: #cccccc;
   }
@@ -237,6 +239,7 @@ tr.even{
 
 .tableau td {  
     text-align: center;
+    overflow: hidden;
   }
 
   
