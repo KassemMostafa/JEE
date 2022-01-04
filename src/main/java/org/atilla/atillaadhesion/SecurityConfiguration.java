@@ -42,9 +42,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.and()
 			.exceptionHandling()
 				.accessDeniedPage("/erreur-501");
-		
-		
-			
 	}
 	
 	
