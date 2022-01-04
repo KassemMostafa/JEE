@@ -71,37 +71,37 @@
             </div>
             <br>
             <div>
-                <label for="mailingListe">Veux-tu rejoindre la mailing list pour être au courant des évènements ATILLA ?</label><br>
+                <label for="mailingListe">MailingList :</label><br>
                 <input type="radio" th:field="*{mailingListe}" class="formRadio" th:value="1"> Oui
                 <input type="radio" th:field="*{mailingListe}" class="formRadio" th:value="0"> Non
             </div>
             <br>
             <div>
-                <label for="cotisant">Comptes-tu cotiser ?</label><br>
-                <input type="radio" th:field="*{cotisant}" class="formRadio"  th:value="2">Oui
+                <label for="cotisant">Cotisation :</label><br>
+                <input type="radio" th:field="*{cotisant}" class="formRadio"  th:value="1"> Oui
+                <input type="radio" th:field="*{cotisant}" class="formRadio"  th:value="2"> Pas encore validé
                 <input type="radio" th:field="*{cotisant}" class="formRadio"  th:value="0"> Non
                 <br><br>
-                <label> (D’un montant de 10€, la cotisation te permet d'être prioritaire sur les évènements, d’accéder à des tarifs préférentiels, au Wifi de l’association, d’avoir un droit de vote ainsi que de soutenir l’association dans ses projets)</label>
             </div>
             <br>
             <div>
-                <label for="connaissancesInfo">As-tu des connaissances en informatique ? Si oui préciser lesquelles.</label><br>
+                <label for="connaissancesInfo">Connaissances en informatique :</label><br>
                 <textarea required th:field="*{connaissancesInfo}" cols="90" rows="5"></textarea>
             </div>
             <br>
             <div>
-                <label for="attentes">Qu'attends-tu de l’association ?</label><br>
+                <label for="attentes">Attentes :</label><br>
                 <textarea required th:field="*{attentes}" cols="90" rows="5"></textarea>
             </div>
             <br>
             <div>
-                <label for="centresInteret">Quels sont tes centres d’intérêts ?</label><br>
+                <label for="centresInteret">Centres d'interet :</label><br>
                 <textarea required th:field="*{centresInteret}" cols="90" rows="5"></textarea>
             </div>
             <br>
             <div>
                 <input type="checkbox" name="conditions" required>
-                <label for="conditions">Je déclare avoir pris connaissance de la charte et du règlement intérieur de l’association, m’engage à les respecter et à les faire respecter pour l’année universitaire 2021/2022.</label>
+                <label for="conditions">Valider les modificatons :</label>
             </div>
             <br>
             <input class="formSubmit" type="submit" value="valider">
