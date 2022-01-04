@@ -39,14 +39,21 @@ public class AdminController {
     }
 	/*@DeleteMapping*/
 	@RequestMapping(value = "deleteA/{id}", method = RequestMethod.GET)
-	public String unvalidate(@PathVariable int id){
+	public String deleteAderant(@PathVariable int id){
 		adherantService.deleteAdherant(id);
 		return("reroot/rerootDA");
 		/*return"Redirect(tresorie/valide)";*/
 	}
+	/*@DeleteMapping*/
+	@RequestMapping(value = "deleteC/{id}", method = RequestMethod.GET)
+	public String deleteCotisant(@PathVariable int id){
+		adherantService.deleteAdherant(id);
+		return("reroot/rerootDC");
+		/*return"Redirect(tresorie/valide)";*/
+	}
 
 	@RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
-	public String showForm(Model model,@PathVariable int id) {
+	public String showFormEdit(Model model,@PathVariable int id) {
 		Adherant adherant = adherantService.getAdherant(id);
 		model.addAttribute("adherant",adherant);
 		return "formEdit";
