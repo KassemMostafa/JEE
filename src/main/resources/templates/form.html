@@ -29,12 +29,10 @@
             <br>
             <div>
                 <label for="genre">Genre :</label> <br>
-                <input  type="radio"  class="formRadio" th:field="*{genre}"  th:value="M" th:checked="checked">Masculin <br>
-                <input type="radio" class="formRadio" th:field="*{genre}" th:value="F">Féminin <br>
-                <label onclick="otherGenre()">
-                <input type="radio" class="formRadio"  name="genre" value="" id="other_genre">Autre
-                <input  type="text" class="formTextbox" th:field="*{genre}">
-                </label> <br> <br>
+                <input type="radio"  class="formRadio" th:field="*{genre}" th:value="M">Masculin <br>
+                <input type="radio" class="formRadio" th:field="*{genre}" th:value="F" >Féminin <br>
+                <input type="radio" class="formRadio"  th:field="*{genre}" th:value="Autre" >Autre
+                <br> <br>
             </div>
             <div>
                 <label for="date">Date de naissance :</label>
@@ -84,6 +82,7 @@
             <div>
                 <label for="cotisant">Comptes-tu cotiser ?</label><br>
                 <input type="radio" th:field="*{cotisant}" class="formRadio"  th:value="2"> Oui
+
                 <input type="radio" th:field="*{cotisant}" class="formRadio"  th:value="0"> Non
                 <br><br>
                 <label> (D’un montant de 10€, la cotisation te permet d'être prioritaire sur les évènements, d’accéder à des tarifs préférentiels, au Wifi de l’association, d’avoir un droit de vote ainsi que de soutenir l’association dans ses projets)</label>
@@ -105,7 +104,8 @@
             </div>
             <br>
             <div>
-                <input type="checkbox" name="conditions" required="required">
+                <input class="clickable" type="checkbox" name="conditions" required="required">
+
                 <label for="conditions">Je déclare avoir pris connaissance de la charte et du règlement intérieur de l’association, m’engage à les respecter et à les faire respecter pour l’année universitaire 2021/2022.</label>
             </div>
             <br>

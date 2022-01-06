@@ -1,7 +1,6 @@
 package org.atilla.atillaadhesion.entity;
 
 
-import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

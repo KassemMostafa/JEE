@@ -50,6 +50,10 @@ a:hover{
     font-weight: bold;
 }
 
+.clickable{
+    cursor: pointer;
+}
+
 
 /*HEADER*/
 .header{
@@ -194,7 +198,7 @@ textarea{
     height: 16px;
     border-radius: 8px 8px 8px 8px;
     margin-right: 1rem;
-
+    cursor: pointer;
 }
 
 .formRadio:checked{
@@ -239,6 +243,7 @@ tr.even{
 
 .tableau td {  
     text-align: center;
+    overflow: hidden;
   }
 
   
@@ -255,10 +260,21 @@ tr.even{
      box-shadow: 0 0 20px #eee;
      border-radius: 10px;
      display: block;
+     cursor: pointer;
+     border: none;
+   }
+   .btn-grad:hover{
+       background-color:#FDA725 ;
    }
 
 .centerbt{
-    padding-left: 40%;
+    display:flex;
+    margin-left: 20%;
+    margin-left: 20%;
+
+}
+.mailinglistText{
+    padding-top: 10px;
 }
    
 .co{
@@ -276,3 +292,13 @@ tr.even{
 }
 
   
+/*page info utilisateur*/
+  
+.paragrapheInfo{
+    margin-left: 2rem;
+}
+
+.info{
+    display: flex;
+}
+

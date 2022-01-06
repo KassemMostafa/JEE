@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/form")
@@ -32,7 +33,12 @@ public class FormController {
 	public String saveAdherant(@ModelAttribute("adherant") Adherant adherant) {
 		adherantService.saveAdherant(adherant);
 		return "redirect:/";
-		
+	}
+
+	@PutMapping("/edit")
+	public String editAdherant(@ModelAttribute("adherant") Adherant adherant) {
+		adherantService.saveAdherant(adherant);
+		return "redirect:/";
 	}
 
 }
