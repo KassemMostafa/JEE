@@ -12,9 +12,10 @@
     <div th:replace = "miseEnForme/header :: header"></div>
     <div class="content">
         <div class="center justify">
-        <form th:action="@{/form/save}" th:object="${adherant}" method="POST">
+        <form th:action="@{/admin/save}" th:object="${adherant}" method="POST">
             <div>
                 <br/>
+                <input type="hidden" th:field="*{id}">
                 <label for="prenom">Prenom :</label>
                 <input required type="text" th:field="*{prenom}" class="formTextbox" >
                 
@@ -32,7 +33,6 @@
                 <input type="radio" class="formRadio" th:field="*{genre}" th:value="F">Féminin <br>
                 <label onclick="otherGenre()">
                 <input type="radio" class="formRadio"  name="genre" value="" id="other_genre">Autre
-                <input  type="text" class="formTextbox" th:field="*{genre}">
                 </label> <br> <br>
             </div>
             <div>

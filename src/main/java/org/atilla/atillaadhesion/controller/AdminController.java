@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -30,7 +32,6 @@ public class AdminController {
         model.addAttribute("mailinglist",MLstring);
         return("admin/adherants");
     }
-
 
 	@GetMapping("/cotisants")
     public String cotisants(Model model){
@@ -64,12 +65,21 @@ public class AdminController {
 		return"redirect:/admin/cotisants";
 	}
 
-	@PutMapping("/edit/{id}")
-	public String showFormEdit(Model model,@PathVariable int id) {
+//	@GetMapping("edit/{id}")
+	@RequestMapping(value = "edit/{id}", method = RequestMethod.GET)
+	public String showEditForm(Model model, @PathVariable int id) { 
 		Adherant adherant = adherantService.getAdherant(id);
 		model.addAttribute("adherant",adherant);
-		return "formEdit";
+		return "formEdit.html";
 	}
+	
+	@PostMapping("/save")
+	public String saveAdherant(@ModelAttribute("adherant") Adherant adherant) {
+		adherantService.saveAdherant(adherant);
+		return "redirect:/";
+	}
+	
+	
 	@GetMapping("/adherant/{id}")
     public String pagePersoAdherant(Model model,@PathVariable int id){
         model.addAttribute("adherant",adherantService.getAdherant(id));

@@ -68,7 +68,6 @@ public class AdherantRestController {
 		
 		return "Adherant with id = " + id + " is deleted";
 	}
-	
 
 	public void delete(){
 		System.out.println("Hello World");

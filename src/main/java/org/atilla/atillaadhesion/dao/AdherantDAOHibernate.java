@@ -107,21 +107,15 @@ public class AdherantDAOHibernate implements AdherantDAO {
 	}
 
 	@Override
-	public void validateCotisant(int id) {
-		Session session = entityManager.unwrap(Session.class);
-		Query query = session.createQuery("update Adherant set cotisant = 1 where id = :adherantId");
-		query.setParameter("adherantId", id);
-		query.executeUpdate();
-		
+	public void validateCotisant(Adherant adherant) {
+		adherant.setCotisant(1);
+		saveAdherant(adherant);
 	}
 	
 	@Override
-	public void unvalidateCotisant(int id) {
-		Session session = entityManager.unwrap(Session.class);
-		Query query = session.createQuery("update Adherant set cotisant = 0 where id = :adherantId");
-		query.setParameter("adherantId", id);
-		query.executeUpdate();
-		
+	public void unvalidateCotisant(Adherant adherant) {
+		adherant.setCotisant(0);
+		saveAdherant(adherant);
 	}
 
 }
