@@ -9,7 +9,7 @@
     </div>
         <a sec:authorize="isAnonymous()" class="headerCompte"  href='/connexion'>Connexion</a>
         <form sec:authorize="isAuthenticated()" th:action="@{/logout}" method="POST">
-            <input class="headerCompte" type="submit" value="Logout"/>
+            <input class="headerLogout" type="submit" value="Déconnexion"/>
         </form>
     </div>
     
