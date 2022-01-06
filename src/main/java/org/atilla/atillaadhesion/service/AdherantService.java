@@ -14,6 +14,6 @@ public interface AdherantService {
 	public void saveAdherant(Adherant adherant);
 	public void deleteAdherant(int id);
 	public List<Adherant> getCotisantsNonValides();
-	public void validateCotisant(int id);
-	public void unvalidateCotisant(int id);
+	public void validateCotisant(Adherant adherant);
+	public void unvalidateCotisant(Adherant adherant);
 }

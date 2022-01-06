@@ -66,18 +66,18 @@ public class AdherantServiceImpl implements AdherantService {
 	public List<Adherant> getCotisantsNonValides() {
 		return adherantDAO.getCotisantsNonValides();
 	}
-
+	
 	@Override
 	@Transactional
-	public void validateCotisant(int id) {
-		adherantDAO.validateCotisant(id);
+	public void validateCotisant(Adherant adherant) {
+		adherantDAO.validateCotisant(adherant);
 		
 	}
 
 	@Override
 	@Transactional
-	public void unvalidateCotisant(int id) {
-		adherantDAO.validateCotisant(id);
+	public void unvalidateCotisant(Adherant adherant) {
+		adherantDAO.unvalidateCotisant(adherant);
 		
 	}
 

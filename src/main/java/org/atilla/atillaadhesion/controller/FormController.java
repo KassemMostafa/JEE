@@ -28,7 +28,7 @@ public class FormController {
 		model.addAttribute("adherant",adherant);
 		return "form";
 	}
-	
+
 	@PostMapping("/save")
 	public String saveAdherant(@ModelAttribute("adherant") Adherant adherant) {
 		adherantService.saveAdherant(adherant);

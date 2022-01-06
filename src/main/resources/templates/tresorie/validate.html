@@ -35,8 +35,8 @@
                 <td class="clickable" th:text="${adherant.promo}" th:attr="onclick=|location.href='/admin/adherant/${adherant.id}'|"></td>
                 <td class="clickable" th:text="${adherant.campus}" th:attr="onclick=|location.href='/admin/adherant/${adherant.id}'|"></td>
                 <td class="clickable" th:text="${adherant.email}" th:attr="onclick=|location.href='/admin/adherant/${adherant.id}'|"></td>
-                <td class="edit clickable"><img src="/images/coche.png" height="40px" width="40px" alt="" th:attr="href=|unvalidate/${adherant.id}|"></td>
-                <td class="suppr clickable"><img src="/images/croix.png" height="40px" width="40px" alt="" th:attr="href=|validate/${adherant.id}|"></td>
+                <td class="edit clickable"><img src="/images/coche.png" height="40px" width="40px" alt=""  th:attr="onclick=|location.href='/tresorie/validation/validate/${adherant.id}'|"></td>
+                <td class="suppr clickable"><img src="/images/croix.png" height="40px" width="40px" alt="" th:attr="onclick=|location.href='/tresorie/validation/unvalidate/${adherant.id}'|"></td>
             </tr>
         </tbody>
     </table>
