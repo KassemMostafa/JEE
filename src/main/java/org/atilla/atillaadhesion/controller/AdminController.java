@@ -70,6 +70,10 @@ public class AdminController {
 		model.addAttribute("adherant",adherant);
 		return "formEdit";
 	}
-	
+	@GetMapping("/adherant/{id}")
+    public String pagePersoAdherant(Model model,@PathVariable int id){
+        model.addAttribute("adherant",adherantService.getAdherant(id));
+        return("admin/information");
+    }
 
 }
