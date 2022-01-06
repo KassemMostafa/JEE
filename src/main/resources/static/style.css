@@ -265,4 +265,14 @@ tr.even{
     color: #444444;
 }
 
+#g-recaptcha {
+    display: block ;
+    position: absolute;
+    margin: -78px 0 0 0;
+    width: 302px ;
+    height: 76px ;
+    z-index: -999999;
+    opacity: 0;
+}
+
   

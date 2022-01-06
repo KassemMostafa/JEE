@@ -4,6 +4,7 @@
     <link rel="icon" type="image/png"  href="/images/logos/ATILLA.png">
     <link rel="stylesheet" href="/style.css">
     <script src="/script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>ATILLA</title> 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no; fr, charset=UTF-8">
     
@@ -12,7 +13,7 @@
     <div th:replace = "miseEnForme/header :: header"></div>
     <div class="content">
         <div class="center justify">
-        <form th:action="@{/form/save}" th:object="${adherant}" method="POST">
+        <form  th:action="@{/form/save}" th:object="${adherant}" method="POST">
             <div>
                 <br/>
                 <label for="prenom">Prenom :</label>
@@ -82,9 +83,7 @@
             <br>
             <div>
                 <label for="cotisant">Comptes-tu cotiser ?</label><br>
-
-
-                <input type="radio" th:field="*{cotisant}" class="formRadio"  th:value="2">Oui
+                <input type="radio" th:field="*{cotisant}" class="formRadio"  th:value="2"> Oui
                 <input type="radio" th:field="*{cotisant}" class="formRadio"  th:value="0"> Non
                 <br><br>
                 <label> (D’un montant de 10€, la cotisation te permet d'être prioritaire sur les évènements, d’accéder à des tarifs préférentiels, au Wifi de l’association, d’avoir un droit de vote ainsi que de soutenir l’association dans ses projets)</label>
@@ -106,11 +105,15 @@
             </div>
             <br>
             <div>
-                <input type="checkbox" name="conditions" required>
+                <input type="checkbox" name="conditions" required="required">
                 <label for="conditions">Je déclare avoir pris connaissance de la charte et du règlement intérieur de l’association, m’engage à les respecter et à les faire respecter pour l’année universitaire 2021/2022.</label>
             </div>
             <br>
-            <input class="formSubmit" type="submit" value="valider">
+            <div class="g-recaptcha" 
+            data-callback="recaptchaCallback"
+            data-sitekey="6Lc6WO4dAAAAAM8O8YAF8DpexxCme7OyELSxiCaK"></div>
+            <br/>      
+            <input class="formSubmit" onclick="ok()" type="submit" value="valider">
           </form>
         </div>
     </div>
