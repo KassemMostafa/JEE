@@ -28,15 +28,15 @@
         </thead>
         <tbody>
             <tr th:each="adherant,iterStat : ${adherants}" th:class="${iterStat.odd}? 'odd' : 'even'">
-                <td th:text="${adherant.nom}"></td>
-                <td th:text="${adherant.prenom}"></td>
-                <td th:text="${adherant.genre}"></td>
-                <td th:text="${adherant.dateDeNaissance}"></td>
-                <td th:text="${adherant.promo}"></td>
-                <td th:text="${adherant.campus}"></td>
-                <td th:text="${adherant.email}"></td>
-                <td class="edit"><img src="/images/coche.png" height="40px" width="40px" alt="" th:attr="href=|unvalidate/${adherant.id}|"></td>
-                <td class="suppr"><img src="/images/croix.png" height="40px" width="40px" alt="" th:attr="href=|validate/${adherant.id}|"></td>
+                <td class="clickable" th:text="${adherant.nom}" th:attr="onclick=|location.href='/admin/adherant/${adherant.id}'|"></td>
+                <td class="clickable" th:text="${adherant.prenom}" th:attr="onclick=|location.href='/admin/adherant/${adherant.id}'|"></td>
+                <td class="clickable" th:text="${adherant.genre}" th:attr="onclick=|location.href='/admin/adherant/${adherant.id}'|"></td>
+                <td class="clickable" th:text="${adherant.dateDeNaissance}" th:attr="onclick=|location.href='/admin/adherant/${adherant.id}'|"></td>
+                <td class="clickable" th:text="${adherant.promo}" th:attr="onclick=|location.href='/admin/adherant/${adherant.id}'|"></td>
+                <td class="clickable" th:text="${adherant.campus}" th:attr="onclick=|location.href='/admin/adherant/${adherant.id}'|"></td>
+                <td class="clickable" th:text="${adherant.email}" th:attr="onclick=|location.href='/admin/adherant/${adherant.id}'|"></td>
+                <td class="edit clickable"><img src="/images/coche.png" height="40px" width="40px" alt="" th:attr="href=|unvalidate/${adherant.id}|"></td>
+                <td class="suppr clickable"><img src="/images/croix.png" height="40px" width="40px" alt="" th:attr="href=|validate/${adherant.id}|"></td>
             </tr>
         </tbody>
     </table>
