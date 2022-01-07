@@ -22,7 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 			.withUser(users.username("admin").password("admin").roles("ADMIN"))
 			.withUser(users.username("Jane").password("123").roles("TRESORIER"));
 	}
-	
+
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
