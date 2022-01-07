@@ -58,7 +58,8 @@ public class Adherant {
 	public Adherant() {
 		//obligatoire pour que hibernate fonctionne
 	}
-
+	
+	
 	public Adherant(String nom, String prenom, String genre, String dateDeNaissance, String promo, String campus,
 			String email, Boolean mailingListe, int cotisant, String connaissancesInfo, String attentes, String centresInteret) {
 		this.nom = nom;

@@ -31,15 +31,9 @@ public class FormController {
 		return "form";
 	}
 	
-//	@GetMapping("edit/{id}")
-	@RequestMapping(value = "edit/{id}", method = RequestMethod.GET)
-	public String showEditForm(Model model, @PathVariable int id) { 
-		Adherant adherant = adherantService.getAdherant(id);
-		model.addAttribute("adherant",adherant);
-		return "formEdit.html";
-	}
 
-	@PostMapping("/save")
+
+	@PostMapping("/form/save")
 	public String saveAdherant(@ModelAttribute("adherant") Adherant adherant) {
 		adherantService.saveAdherant(adherant);
 		return "redirect:/";
